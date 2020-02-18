@@ -15,10 +15,24 @@ pipeline {
       }
     }
 
+  stage('compile code') {
+      steps{
+        script {
+          sh 'mvn -DskipTests clean package'
+        }
+      }
+    }
+stage('copy war ') {
+      steps{
+        script {
+          sh 'cp ./webapp/target/webapp.war ./webapp.war'
+        }
+      }
+    }
     stage('Build image') {
       steps{
         script {
-          sh 'docker build -t myweb .'
+          sh 'docker build -t mywebtom .'
         }
       }
     }

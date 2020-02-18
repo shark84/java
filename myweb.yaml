@@ -3,36 +3,36 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: myweb
-  name: myweb
+    app: mywebtom
+  name: mywebtom
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: myweb
+      app: mywebtom
   template:
     metadata:
       labels:
-        app: myweb
+        app: mywebtom
     spec:
       containers:
-      - image: myweb:latest
+      - image: mywebtom
         imagePullPolicy: Never
-        name: myweb
+        name: mywebtom
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: myweb
-  name: myweb
+    app: mywebtom
+  name: mywebtom
 spec:
   ports:
-  - nodePort: 32223
+  - nodePort: 32225
     port: 80
     protocol: TCP
     targetPort: 80
   selector:
-    app: myweb
+    app: mywebtom
   type: NodePort
