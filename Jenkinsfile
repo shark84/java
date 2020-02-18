@@ -27,7 +27,7 @@ pipeline {
     stage('sleep') {
       steps{
         script {
-          sh 'sleep 300'
+          sh 'sleep 2'
         }
       }
     }
