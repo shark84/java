@@ -18,7 +18,7 @@ pipeline {
     stage('Build image') {
       steps{
         script {
-          dockerImage = docker.build -t myweb
+          sh 'docker build -t myweb .'
         }
       }
     }
