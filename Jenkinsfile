@@ -23,6 +23,15 @@ pipeline {
       }
     }
 
+
+    stage('sleep') {
+      steps{
+        script {
+          sh 'sleep 300'
+        }
+      }
+    }
+
     
 
     stage('Deploy App') {
